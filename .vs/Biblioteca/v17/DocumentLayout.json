@@ -1,7 +1,28 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Renata\\Biblioteca\\Biblioteca\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4640D606-405C-4DEA-9CE7-A59CD3549242}|Biblioteca\\Biblioteca.csproj|c:\\renata\\biblioteca\\biblioteca\\biblioteca\\models\\livro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4640D606-405C-4DEA-9CE7-A59CD3549242}|Biblioteca\\Biblioteca.csproj|solutionrelative:biblioteca\\models\\livro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4640D606-405C-4DEA-9CE7-A59CD3549242}|Biblioteca\\Biblioteca.csproj|c:\\renata\\biblioteca\\biblioteca\\biblioteca\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4640D606-405C-4DEA-9CE7-A59CD3549242}|Biblioteca\\Biblioteca.csproj|solutionrelative:biblioteca\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4640D606-405C-4DEA-9CE7-A59CD3549242}|Biblioteca\\Biblioteca.csproj|c:\\renata\\biblioteca\\biblioteca\\biblioteca\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4640D606-405C-4DEA-9CE7-A59CD3549242}|Biblioteca\\Biblioteca.csproj|solutionrelative:biblioteca\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4640D606-405C-4DEA-9CE7-A59CD3549242}|Biblioteca\\Biblioteca.csproj|c:\\renata\\biblioteca\\biblioteca\\biblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4640D606-405C-4DEA-9CE7-A59CD3549242}|Biblioteca\\Biblioteca.csproj|solutionrelative:biblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4640D606-405C-4DEA-9CE7-A59CD3549242}|Biblioteca\\Biblioteca.csproj|c:\\renata\\biblioteca\\biblioteca\\biblioteca\\data\\bibliotecacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4640D606-405C-4DEA-9CE7-A59CD3549242}|Biblioteca\\Biblioteca.csproj|solutionrelative:biblioteca\\data\\bibliotecacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +30,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Renata\\Biblioteca\\Biblioteca\\Biblioteca\\Program.cs",
+              "RelativeDocumentMoniker": "Biblioteca\\Program.cs",
+              "ToolTip": "C:\\Renata\\Biblioteca\\Biblioteca\\Biblioteca\\Program.cs",
+              "RelativeToolTip": "Biblioteca\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T19:28:07.909Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Renata\\Biblioteca\\Biblioteca\\Biblioteca\\appsettings.json",
+              "RelativeDocumentMoniker": "Biblioteca\\appsettings.json",
+              "ToolTip": "C:\\Renata\\Biblioteca\\Biblioteca\\Biblioteca\\appsettings.json",
+              "RelativeToolTip": "Biblioteca\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-08-13T19:26:50.667Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BibliotecaContext.cs",
+              "DocumentMoniker": "C:\\Renata\\Biblioteca\\Biblioteca\\Biblioteca\\Data\\BibliotecaContext.cs",
+              "RelativeDocumentMoniker": "Biblioteca\\Data\\BibliotecaContext.cs",
+              "ToolTip": "C:\\Renata\\Biblioteca\\Biblioteca\\Biblioteca\\Data\\BibliotecaContext.cs",
+              "RelativeToolTip": "Biblioteca\\Data\\BibliotecaContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T19:25:03.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Renata\\Biblioteca\\Biblioteca\\Biblioteca\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "Biblioteca\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Renata\\Biblioteca\\Biblioteca\\Biblioteca\\Models\\Usuario.cs",
+              "RelativeToolTip": "Biblioteca\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T19:16:40.51Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Livro.cs",
+              "DocumentMoniker": "C:\\Renata\\Biblioteca\\Biblioteca\\Biblioteca\\Models\\Livro.cs",
+              "RelativeDocumentMoniker": "Biblioteca\\Models\\Livro.cs",
+              "ToolTip": "C:\\Renata\\Biblioteca\\Biblioteca\\Biblioteca\\Models\\Livro.cs",
+              "RelativeToolTip": "Biblioteca\\Models\\Livro.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T19:15:32.087Z",
+              "EditorCaption": ""
             }
           ]
         }
