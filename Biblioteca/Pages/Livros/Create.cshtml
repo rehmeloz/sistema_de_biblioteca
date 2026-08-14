@@ -1,0 +1,22 @@
+﻿@page
+@model Biblioteca.Pages.Livros.CreateModel
+@{
+}
+
+<h2>Cadastrar Livro</h2>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form method="post">
+    <label asp-for="Titulo"></label>
+    <input asp-for="Titulo" />
+    <span asp-validation-for="Titulo" class="text-danger"></span>
+
+    <label asp-for="Autor"></label>
+    <input asp-for="Autor"/>
+    <span asp-validation-for="Autor" class="text-danger"></span>
+
+    <button type="submit">Salvar</button>
+</form>
+
+<a asp-page="Index">Voltar</a>

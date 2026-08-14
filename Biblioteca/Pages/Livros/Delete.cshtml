@@ -1,0 +1,22 @@
+﻿@page
+@model Biblioteca.Pages.Livros.DeleteModel
+@{
+}
+
+<h2>Excluir livro</h2>
+
+<p>Tem certeza que deseja excluir o livro abaixo?</p>
+
+<dl>
+    <dt>Título</dt>
+    <dd>@Model.Livro?.Titulo</dd>
+
+    <dt>Autor</dt>
+    <dd>@Model.Livro?.Autor</dd>
+</dl>
+
+<form method="post">
+    <button type="submit">Confirmar exclusão</button>
+</form>
+
+<a asp-page="Index">Cancelar</a>

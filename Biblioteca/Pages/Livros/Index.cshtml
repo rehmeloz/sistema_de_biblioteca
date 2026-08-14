@@ -1,0 +1,31 @@
+﻿@page
+@model Biblioteca.Pages.Livros.IndexModel
+
+<h2>Livros</h2>
+
+<a asp-page="Create">Cadastrar</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Disponível</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var livro in Model.Livros)
+        {
+            <tr>
+                <td>@livro.Titulo</td>
+                <td>@livro.Autor</td>
+                <td>@(livro.Disponivel ? "Sim" : "Não")</td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@livro.Id">Editar</a>
+                    <a asp-page="Delete" asp-route-id="@livro.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
