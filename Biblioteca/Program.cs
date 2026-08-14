@@ -23,6 +23,8 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.MapGet("/", () => Results.Redirect("/Livros"));
+
 app.MapRazorPages();
 
 app.Run();
