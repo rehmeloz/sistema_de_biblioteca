@@ -39,6 +39,6 @@ public class DeleteModel : PageModel
             await _context.SaveChangesAsync();
         }
 
-        return RedirectToAction("Index");
+        return RedirectToPage("Index");
     }
 }
