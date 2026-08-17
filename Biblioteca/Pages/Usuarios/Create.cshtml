@@ -1,0 +1,20 @@
+﻿@page
+@model Biblioteca.Pages.Usuarios.CreateModel
+
+<h2>Cadastrar usuário</h2>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form method="post">
+    <label asp-for="Nome"></label>
+    <input asp-for="Nome"/>
+    <span asp-validation-for="Nome" class="text-danger"></span>
+
+    <label asp-for="Email"></label>
+    <input asp-for="Email"/>
+    <span asp-validation-for="Email" class="text-danger"></span>
+
+    <button type="submit">Cadastrar</button>
+</form>
+
+<a asp-page="/Usuarios/Index">Voltar</a>
