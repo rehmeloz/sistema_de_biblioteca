@@ -1,0 +1,31 @@
+﻿@page
+@model Biblioteca.Pages.Usuarios.IndexModel
+
+<h2>Usuarios</h2>
+
+<a asp-page="Create">Cadastrar</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var usuario in Model.Usuarios)
+        {
+            <tr>
+                <td>@usuario.Id</td>
+                <td>@usuario.Nome</td>
+                <td>@usuario.Email</td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@usuario.Id">Editar</a>
+                    <a asp-page="Delete" asp-route-id="@usuario.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
