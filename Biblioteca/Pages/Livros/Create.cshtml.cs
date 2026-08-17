@@ -44,6 +44,6 @@ public class CreateModel : PageModel
         _context.Livros.Add(livro);
         await _context.SaveChangesAsync();
 
-        return RedirectToPage("Index");
+        return RedirectToPage("/Livros/Index");
     }
 }
