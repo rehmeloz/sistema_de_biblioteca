@@ -3,7 +3,7 @@
 
 <h2>Usuarios</h2>
 
-<a asp-page="Create">Cadastrar</a>
+<a asp-page="/Usuarios/Create">Cadastrar</a>
 
 <table class="table">
     <thead>
@@ -22,8 +22,8 @@
                 <td>@usuario.Nome</td>
                 <td>@usuario.Email</td>
                 <td>
-                    <a asp-page="Edit" asp-route-id="@usuario.Id">Editar</a>
-                    <a asp-page="Delete" asp-route-id="@usuario.Id">Excluir</a>
+                    <a asp-page="/Usuarios/Edit" asp-route-id="@usuario.Id">Editar</a>
+                    <a asp-page="/Usuarios/Delete" asp-route-id="@usuario.Id">Excluir</a>
                 </td>
             </tr>
         }
