@@ -16,8 +16,15 @@ public class IndexModel : PageModel
 
     public List<Livro> Livros { get; set; }
 
-    public async Task OnGetAsync()
+    public async Task OnGetAsync(bool? disponivel)
     {
-        Livros = await _context.Livros.ToListAsync();
+        if(disponivel == true)
+        {
+            Livros = await _context.Livros.Where(l => l.Disponivel).ToListAsync();
+        }
+        else
+        {
+            Livros = await _context.Livros.ToListAsync();
+        }    
     }
 }
