@@ -1,0 +1,23 @@
+﻿@page
+@model Biblioteca.Pages.Usuarios.DeleteModel
+@{
+}
+
+<h2>Excluir usuário</h2>
+
+<p>Tem certeza que deseja excluir o usuário abaixo?</p>
+
+
+<dl>
+    <dt>Nome</dt>
+    <dd>@Model.Usuario?.Nome</dd>
+
+    <dt>Email</dt>
+    <dd>@Model.Usuario?.Email</dd>
+</dl>
+
+<form method="post">
+    <button type="submit">Confirmar exclusão</button>
+</form>
+
+<a asp-page="/Usuarios/Index">Cancelar</a>
