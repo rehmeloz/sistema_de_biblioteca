@@ -3,7 +3,7 @@
 
 <h2>Livros</h2>
 
-<a asp-page="Create">Cadastrar</a>
+<a asp-page="/Livros/Create">Cadastrar</a>
 
 <table class="table">
     <thead>
@@ -22,8 +22,8 @@
                 <td>@livro.Autor</td>
                 <td>@(livro.Disponivel ? "Sim" : "Não")</td>
                 <td>
-                    <a asp-page="Edit" asp-route-id="@livro.Id">Editar</a>
-                    <a asp-page="Delete" asp-route-id="@livro.Id">Excluir</a>
+                    <a asp-page="/Livros/Edit" asp-route-id="@livro.Id">Editar</a>
+                    <a asp-page="/Livros/Delete" asp-route-id="@livro.Id">Excluir</a>
                 </td>
             </tr>
         }

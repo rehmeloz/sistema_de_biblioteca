@@ -65,6 +65,6 @@ public class EditModel : PageModel
 
         await _context.SaveChangesAsync();
 
-        return RedirectToPage("Index");
+        return RedirectToPage("/Livros/Index");
     }
 }
