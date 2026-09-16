@@ -27,7 +27,6 @@ public class CreateModel : PageModel
     [BindProperty]
     [Required(ErrorMessage = "Usuário é obrigatório!")]
     public int UsuarioId { get; set; }
-
     public SelectList UsuariosSelectList { get; set; }
 
     public void OnGet()
@@ -51,12 +50,21 @@ public class CreateModel : PageModel
             return Page();
         }
 
+        var usuario = await _context.Usuarios.FindAsync(UsuarioId);
+
+        if (usuario == null)
+        {
+            ModelState.AddModelError("UsuarioId", "Usuário não encontrado!");
+            return Page();
+        }
+
         var livro = new Livro
         {
             Titulo = Titulo,
             Autor = Autor,
             Disponivel = true,
-            UsuarioId = UsuarioId
+            UsuarioId = UsuarioId,
+            NomeUsuarioCadastro = usuario.Nome
         };
 
         _context.Livros.Add(livro);
