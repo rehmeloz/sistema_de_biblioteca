@@ -8,4 +8,14 @@ public class BibliotecaContext : DbContext
 
     public DbSet<Livro> Livros { get; set; }
     public DbSet<Usuario> Usuarios { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<Livro>()
+            .HasOne(l => l.Usuario)
+            .WithMany(u => u.Livros)
+            .HasForeignKey(l => l.UsuarioId);
+    }
 }
