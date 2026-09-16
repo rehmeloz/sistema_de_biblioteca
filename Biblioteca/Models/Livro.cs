@@ -8,4 +8,5 @@ public class Livro
     public bool Disponivel { get; set; } = true;
     public int UsuarioId { get; set; }
     public Usuario? Usuario { get; set; }
+    public string? NomeUsuarioCadastro { get; set; }
 }
