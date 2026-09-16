@@ -13,6 +13,7 @@
             <th>Título</th>
             <th>Autor</th>
             <th>Disponível</th>
+            <th>Quem cadastrou</th>
             <th></th>
         </tr>
     </thead>
@@ -23,6 +24,7 @@
                 <td>@livro.Titulo</td>
                 <td>@livro.Autor</td>
                 <td>@(livro.Disponivel ? "Sim" : "Não")</td>
+                <td>@livro.NomeUsuarioCadastro</td>
                 <td>
                     <a asp-page="/Livros/Edit" asp-route-id="@livro.Id">Editar</a>
                     <a asp-page="/Livros/Delete" asp-route-id="@livro.Id">Excluir</a>
