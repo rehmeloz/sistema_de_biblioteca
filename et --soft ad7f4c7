@@ -1,0 +1,24 @@
+[33m02d5276[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Revert "adiciona novas propriedades aos objetos Livro e Usuario, realizando a relação entre ambos no banco de dados através de versionamento com migrations"
+[33m43acfd3[m Reapply "adiciona novas propriedades aos objetos Livro e Usuario, realizando a relação entre ambos no banco de dados através de versionamento com migrations"
+[33m272ddfe[m Revert "adiciona novas propriedades aos objetos Livro e Usuario, realizando a relação entre ambos no banco de dados através de versionamento com migrations"
+[33m6dc1d46[m Merge branch 'main' of https://github.com/rehmeloz/sistema_de_biblioteca
+[33m82c3c44[m adiciona novas propriedades aos objetos Livro e Usuario, realizando a relação entre ambos no banco de dados através de versionamento com migrations
+[33mad7f4c7[m Create README.md
+[33m258d12b[m adiciona filtro de disponibilidade na listagem dos livros cadastrados
+[33m221df81[m adiciona estrtura de exclusão de usuários
+[33mccbd031[m ajusta bug de retorno ao acessar a página de edição de usuário
+[33m9f4763c[m ajuste de rota de navegação
+[33ma6559e9[m ajustes de rotas de navegação
+[33m0623331[m adição da página de cadastro de usuário
+[33me065451[m ajuste de rotas nos botões de direcionamento
+[33m5cfc2ec[m ajusta rotas para páginas Livros e Usuarios
+[33mf0bb070[m adiciona pasta Usuarios e página index para objeto usuario
+[33m63d785c[m ajusta método de retorno de página
+[33m907117d[m ajusta nome incorreto de método OnPostoAsync > OnPostAsync
+[33m97b7324[m Deleta arquivos Index nativos e adiciona redirecionamento de rota
+[33mf84ee9c[m Adiciona pasta Livros e arquivos para funcionalidades CRUD para realização de cadastro de livros
+[33m9970076[m Merge branch 'main' of https://github.com/rehmeloz/sistema_de_biblioteca
+[33m65c899c[m Corrige gitignore, remove .vs e obj do rastreamento, adiciona Data/Models/Migrations do EF Core
+[33m2e57307[m corrige arquivos ignorados pelo git
+[33mea6fd22[m commit inicial
+[33m4a9217f[m Initial commit

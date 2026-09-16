@@ -1,8 +1,9 @@
 using Biblioteca.Data;
+using Biblioteca.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
-using Biblioteca.Models;
 
 namespace Biblioteca.Pages.Livros;
 
@@ -21,16 +22,32 @@ public class CreateModel : PageModel
 
     [BindProperty]
     [Required(ErrorMessage = "Autor é obrigatório!")]
-
     public string Autor { get; set; } = string.Empty;
+
+    [BindProperty]
+    [Required(ErrorMessage = "Usuário é obrigatório!")]
+    public int UsuarioId { get; set; }
+
+    public SelectList UsuariosSelectList { get; set; }
+
     public void OnGet()
     {
+        UsuariosSelectList = new SelectList(
+            _context.Usuarios.ToList(),
+            nameof(Usuario.Id),
+            nameof(Usuario.Nome)
+        );
     }
 
     public async Task<IActionResult> OnPostAsync()
     {
         if (!ModelState.IsValid)
         {
+            UsuariosSelectList = new SelectList(
+                _context.Usuarios.ToList(),
+                nameof(Usuario.Id),
+                nameof(Usuario.Nome)
+            );
             return Page();
         }
 
@@ -38,7 +55,8 @@ public class CreateModel : PageModel
         {
             Titulo = Titulo,
             Autor = Autor,
-            Disponivel = true
+            Disponivel = true,
+            UsuarioId = UsuarioId
         };
 
         _context.Livros.Add(livro);

@@ -16,6 +16,12 @@
     <input asp-for="Autor"/>
     <span asp-validation-for="Autor" class="text-danger"></span>
 
+    <label asp-for="UsuarioId">Usuário</label>
+    <select asp-for="UsuarioId" asp-items="@Model.UsuariosSelectList" class="form-select">
+        <option value="">Selecione um usuário</option>
+    </select>
+    <span asp-validation-for="UsuarioId" class="text-danger"></span>
+
     <button type="submit">Salvar</button>
 </form>
 
