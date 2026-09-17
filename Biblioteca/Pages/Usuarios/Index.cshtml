@@ -9,10 +9,9 @@
     </div>
 </div>
 
-<!-- Tabela Estilizada com Tailwind -->
 <div class="tw-overflow-x-auto tw-bg-white tw-rounded-lg tw-shadow-md">
     <table class="tw-w-full tw-border-collapse">
-        <!-- Cabeçalho -->
+
         <thead>
             <tr class="tw-bg-gradient-to-r tw-from-blue-600 tw-to-blue-700 tw-text-white">
                 <th class="tw-px-6 tw-py-4 tw-text-left tw-font-semibold">Id</th>
@@ -22,7 +21,6 @@
             </tr>
         </thead>
 
-        <!-- Corpo -->
         <tbody>
             @foreach (var usuario in Model.Usuarios)
             {
@@ -31,11 +29,11 @@
                     <td class="tw-px-6 tw-py-4 tw-text-gray-800 tw-font-medium">@usuario.Nome</td>
                     <td class="tw-px-6 tw-py-4 tw-text-gray-700">@usuario.Email</td>
                     <td class="tw-px-6 tw-py-4 tw-text-center tw-flex tw-justify-center tw-gap-2">
-                        <a class="tw-bg-blue-500 hover:tw-bg-blue-600 !tw-text-white tw-px-4 tw-py-2 tw-rounded tw-text-sm tw-font-medium tw-transition-colors tw-cursor-pointer"
+                        <a class="tw-bg-blue-500 hover:tw-bg-blue-600 !tw-text-white tw-px-4 tw-py-2 tw-rounded tw-text-sm tw-font-medium tw-transition-colors tw-cursor-pointer tw-no-underline"
                            asp-page="/Usuarios/Edit" asp-route-id="@usuario.Id">
                             Editar
                         </a>
-                        <a class="tw-bg-red-500 hover:tw-bg-red-600 !tw-text-white tw-px-4 tw-py-2 tw-rounded tw-text-sm tw-font-medium tw-transition-colors tw-cursor-pointer"
+                        <a class="tw-bg-red-500 hover:tw-bg-red-600 !tw-text-white tw-px-4 tw-py-2 tw-rounded tw-text-sm tw-font-medium tw-transition-colors tw-cursor-pointer tw-no-underline"
                            asp-page="/Usuarios/Delete" asp-route-id="@usuario.Id">
                             Excluir
                         </a>
@@ -46,7 +44,6 @@
     </table>
 </div>
 
-<!-- Se não houver usuários -->
 @if(Model.Usuarios.Count == 0)
 {
     <div class="tw-mt-8 tw-text-center tw-p-8 tw-bg-gray-100 tw-rounded-lg">
