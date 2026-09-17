@@ -1,25 +1,43 @@
 ﻿@page
 @model Biblioteca.Pages.Livros.DeleteModel
-@{
-}
 
-<h2>Excluir livro</h2>
+<div class="tw-flex tw-flex-col tw-items-center tw-py-8">
 
-<p>Tem certeza que deseja excluir o livro abaixo?</p>
+    <h1 class="tw-text-3xl tw-font-bold tw-text-gray-800 tw-mb-8">Excluir Livro</h1>
 
-<dl>
-    <dt>Título</dt>
-    <dd>@Model.Livro?.Titulo</dd>
+    <div class="tw-bg-white tw-rounded-lg tw-shadow-md tw-p-8 tw-w-full tw-max-w-md">
 
-    <dt>Autor</dt>
-    <dd>@Model.Livro?.Autor</dd>
+        <div class="tw-bg-yellow-50 tw-border tw-border-yellow-200 tw-text-yellow-800 tw-p-4 tw-rounded-lg tw-mb-6">
+            <p class="tw-font-semibold">⚠️ Tem certeza que deseja excluir o livro abaixo?</p>
+        </div>
 
-    <dt>Quem cadastrou</dt>
-    <dd>@Model.Livro?.NomeUsuarioCadastro</dd>
-</dl>
+        <div class="tw-bg-gray-50 tw-rounded-lg tw-p-6 tw-mb-8 tw-border tw-border-gray-200">
+            <div class="tw-mb-4">
+                <p class="tw-text-sm tw-font-semibold tw-text-gray-600">Título</p>
+                <p class="tw-text-lg tw-font-semibold tw-text-gray-800">@Model.Livro?.Titulo</p>
+            </div>
 
-<form method="post">
-    <button type="submit">Confirmar exclusão</button>
-</form>
+            <div class="tw-mb-4">
+                <p class="tw-text-sm tw-font-semibold tw-text-gray-600">Autor</p>
+                <p class="tw-text-lg tw-font-semibold tw-text-gray-800">@Model.Livro?.Autor</p>
+            </div>
 
-<a asp-page="/Livros/Index">Cancelar</a>
+            <div>
+                <p class="tw-text-sm tw-font-semibold tw-text-gray-600">Quem cadastrou</p>
+                <p class="tw-text-lg tw-font-semibold tw-text-gray-800">@Model.Livro?.NomeUsuarioCadastro</p>
+            </div>
+        </div>
+
+        <form method="post">
+            <div class="tw-flex tw-gap-3">
+                <button type="submit" class="tw-flex-1 tw-bg-red-500 hover:tw-bg-red-600 !tw-text-white tw-px-4 tw-py-2 tw-rounded-lg tw-font-semibold tw-transition-colors tw-cursor-pointer">
+                    Confirmar exclusão
+                </button>
+                <a asp-page="/Livros/Index" class="tw-flex-1 tw-bg-gray-400 hover:tw-bg-gray-500 !tw-text-white tw-px-4 tw-py-2 tw-rounded-lg tw-font-semibold tw-transition-colors tw-cursor-pointer tw-text-center tw-flex tw-items-center tw-justify-center tw-no-underline">
+                    Cancelar
+                </a>
+            </div>
+        </form>
+    </div>
+
+</div>
