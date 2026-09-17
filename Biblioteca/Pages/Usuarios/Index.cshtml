@@ -1,31 +1,55 @@
 ﻿@page
 @model Biblioteca.Pages.Usuarios.IndexModel
 
-<h2>Usuarios</h2>
+<div class="tw-flex tw-justify-between tw-items-center tw-mb-6">
+    <h1 class="tw-text-3xl tw-font-bold tw-text-gray-800">Usuários</h1>
 
-<a asp-page="/Usuarios/Create">Cadastrar</a>
+    <div class="tw-flex tw-gap-3">
+        <a class="btn btn-primary" asp-page="/Usuarios/Create">Cadastrar</a>
+    </div>
+</div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var usuario in Model.Usuarios)
-        {
-            <tr>
-                <td>@usuario.Id</td>
-                <td>@usuario.Nome</td>
-                <td>@usuario.Email</td>
-                <td>
-                    <a asp-page="/Usuarios/Edit" asp-route-id="@usuario.Id">Editar</a>
-                    <a asp-page="/Usuarios/Delete" asp-route-id="@usuario.Id">Excluir</a>
-                </td>
+<!-- Tabela Estilizada com Tailwind -->
+<div class="tw-overflow-x-auto tw-bg-white tw-rounded-lg tw-shadow-md">
+    <table class="tw-w-full tw-border-collapse">
+        <!-- Cabeçalho -->
+        <thead>
+            <tr class="tw-bg-gradient-to-r tw-from-blue-600 tw-to-blue-700 tw-text-white">
+                <th class="tw-px-6 tw-py-4 tw-text-left tw-font-semibold">Id</th>
+                <th class="tw-px-6 tw-py-4 tw-text-left tw-font-semibold">Nome</th>
+                <th class="tw-px-6 tw-py-4 tw-text-left tw-font-semibold">Email</th>
+                <th class="tw-px-6 tw-py-4 tw-text-center tw-font-semibold">Ações</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+
+        <!-- Corpo -->
+        <tbody>
+            @foreach (var usuario in Model.Usuarios)
+            {
+                <tr class="tw-border-b tw-border-gray-200 hover:tw-bg-gray-50 tw-transition-colors">
+                    <td class="tw-px-6 tw-py-4 tw-text-gray-800 tw-font-medium">@usuario.Id</td>
+                    <td class="tw-px-6 tw-py-4 tw-text-gray-800 tw-font-medium">@usuario.Nome</td>
+                    <td class="tw-px-6 tw-py-4 tw-text-gray-700">@usuario.Email</td>
+                    <td class="tw-px-6 tw-py-4 tw-text-center tw-flex tw-justify-center tw-gap-2">
+                        <a class="tw-bg-blue-500 hover:tw-bg-blue-600 !tw-text-white tw-px-4 tw-py-2 tw-rounded tw-text-sm tw-font-medium tw-transition-colors tw-cursor-pointer"
+                           asp-page="/Usuarios/Edit" asp-route-id="@usuario.Id">
+                            Editar
+                        </a>
+                        <a class="tw-bg-red-500 hover:tw-bg-red-600 !tw-text-white tw-px-4 tw-py-2 tw-rounded tw-text-sm tw-font-medium tw-transition-colors tw-cursor-pointer"
+                           asp-page="/Usuarios/Delete" asp-route-id="@usuario.Id">
+                            Excluir
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Se não houver usuários -->
+@if(Model.Usuarios.Count == 0)
+{
+    <div class="tw-mt-8 tw-text-center tw-p-8 tw-bg-gray-100 tw-rounded-lg">
+        <p class="tw-text-gray-600 tw-text-lg">Nenhum usuário cadastrado</p>
+    </div>
+}

@@ -1,35 +1,68 @@
 ﻿@page
 @model Biblioteca.Pages.Livros.IndexModel
 
-<h2>Livros</h2>
+<div class="tw-flex tw-justify-between tw-items-center tw-mb-6">
+    <h1 class="tw-text-3xl tw-font-bold tw-text-gray-800">Livros</h1>
+    
+    <div class="tw-flex tw-gap-3">
+        <a class="btn btn-primary" asp-page="/Livros/Create">Cadastrar</a>
+        <a class="btn btn-secondary" asp-page="/Livros/Index" asp-route-disponivel="true">Mostrar só disponíveis</a>
+        <a class="btn btn-secondary" asp-page="/Livros/Index">Mostrar todos</a>
+    </div>
+</div>
 
-<a asp-page="/Livros/Create">Cadastrar</a> |
-<a asp-page="/Livros/Index" asp-route-disponivel="true">Mostrar só disponíveis</a> |
-<a asp-page="/Livros/Index">Mostrar todos</a>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Título</th>
-            <th>Autor</th>
-            <th>Disponível</th>
-            <th>Quem cadastrou</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach(var livro in Model.Livros)
-        {
-            <tr>
-                <td>@livro.Titulo</td>
-                <td>@livro.Autor</td>
-                <td>@(livro.Disponivel ? "Sim" : "Não")</td>
-                <td>@livro.NomeUsuarioCadastro</td>
-                <td>
-                    <a asp-page="/Livros/Edit" asp-route-id="@livro.Id">Editar</a>
-                    <a asp-page="/Livros/Delete" asp-route-id="@livro.Id">Excluir</a>
-                </td>
+<div class="tw-overflow-x-auto tw-bg-white tw-rounded-lg tw-shadow-md">
+    <table class="tw-w-full tw-border-collapse">
+        <thead>
+            <tr class="tw-bg-gradient-to-r tw-from-blue-600 tw-to-blue-700 tw-text-white">
+                <th class="tw-px-6 tw-py-4 tw-text-left tw-font-semibold">Título</th>
+                <th class="tw-px-6 tw-py-4 tw-text-left tw-font-semibold">Autor</th>
+                <th class="tw-px-6 tw-py-4 tw-text-center tw-font-semibold">Disponível</th>
+                <th class="tw-px-6 tw-py-4 tw-text-left tw-font-semibold">Quem cadastrou</th>
+                <th class="tw-px-6 tw-py-4 tw-text-center tw-font-semibold">Ações</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+       
+        <tbody>
+            @foreach(var livro in Model.Livros)
+            {
+                <tr class="tw-border-b tw-border-gray-200 hover:tw-bg-gray-50 tw-transition-colors">
+                    <td class="tw-px-6 tw-py-4 tw-text-gray-800 tw-font-medium">@livro.Titulo</td>
+                    <td class="tw-px-6 tw-py-4 tw-text-gray-700">@livro.Autor</td>
+                    <td class="tw-px-6 tw-py-4 tw-text-center">
+                        @if(livro.Disponivel)
+                        {
+                            <span class="tw-inline-block tw-bg-green-100 tw-text-green-800 tw-px-3 tw-py-1 tw-rounded-full tw-text-sm tw-font-semibold">
+                                Sim
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="tw-inline-block tw-bg-red-100 tw-text-red-800 tw-px-3 tw-py-1 tw-rounded-full tw-text-sm tw-font-semibold">
+                                Não
+                            </span>
+                        }
+                    </td>
+                    <td class="tw-px-6 tw-py-4 tw-text-gray-700">@livro.NomeUsuarioCadastro</td>
+                        <td class="tw-px-6 tw-py-4 tw-text-center tw-flex tw-justify-center tw-gap-2">
+                        <a class="tw-bg-blue-500 hover:tw-bg-blue-600 !tw-text-white tw-px-4 tw-py-2 tw-rounded tw-text-sm tw-font-medium tw-transition-colors tw-cursor-pointer" 
+                           asp-page="/Livros/Edit" asp-route-id="@livro.Id">
+                            Editar
+                        </a>
+                        <a class="tw-bg-red-500 hover:tw-bg-red-600 !tw-text-white tw-px-4 tw-py-2 tw-rounded tw-text-sm tw-font-medium tw-transition-colors tw-cursor-pointer" 
+                           asp-page="/Livros/Delete" asp-route-id="@livro.Id">
+                            Excluir
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if(Model.Livros.Count == 0)
+{
+    <div class="tw-mt-8 tw-text-center tw-p-8 tw-bg-gray-100 tw-rounded-lg">
+        <p class="tw-text-gray-600 tw-text-lg">Nenhum livro cadastrado</p>
+    </div>
+}
