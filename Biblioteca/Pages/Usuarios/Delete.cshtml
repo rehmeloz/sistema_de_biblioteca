@@ -1,23 +1,38 @@
 ﻿@page
 @model Biblioteca.Pages.Usuarios.DeleteModel
-@{
-}
 
-<h2>Excluir usuário</h2>
+<div class="tw-flex tw-flex-col tw-items-center tw-py-8">
 
-<p>Tem certeza que deseja excluir o usuário abaixo?</p>
+    <h1 class="tw-text-3xl tw-font-bold tw-text-gray-800 tw-mb-8">Excluir Usuário</h1>
 
+    <div class="tw-bg-white tw-rounded-lg tw-shadow-md tw-p-8 tw-w-full tw-max-w-md">
+        
+        <div class="tw-bg-yellow-50 tw-border tw-border-yellow-200 tw-text-yellow-800 tw-p-4 tw-rounded-lg tw-mb-6">
+            <p class="tw-font-semibold">⚠️ Tem certeza que deseja excluir o usuário abaixo?</p>
+        </div>
 
-<dl>
-    <dt>Nome</dt>
-    <dd>@Model.Usuario?.Nome</dd>
+        <div class="tw-bg-gray-50 tw-rounded-lg tw-p-6 tw-mb-8 tw-border tw-border-gray-200">
+            <div class="tw-mb-4">
+                <p class="tw-text-sm tw-font-semibold tw-text-gray-600">Nome</p>
+                <p class="tw-text-lg tw-font-semibold tw-text-gray-800">@Model.Usuario?.Nome</p>
+            </div>
 
-    <dt>Email</dt>
-    <dd>@Model.Usuario?.Email</dd>
-</dl>
+            <div>
+                <p class="tw-text-sm tw-font-semibold tw-text-gray-600">Email</p>
+                <p class="tw-text-lg tw-font-semibold tw-text-gray-800">@Model.Usuario?.Email</p>
+            </div>
+        </div>
 
-<form method="post">
-    <button type="submit">Confirmar exclusão</button>
-</form>
+        <form method="post">
+            <div class="tw-flex tw-gap-3">
+                <button type="submit" class="tw-flex-1 tw-bg-red-500 hover:tw-bg-red-600 !tw-text-white tw-px-4 tw-py-2 tw-rounded-lg tw-font-semibold tw-transition-colors tw-cursor-pointer">
+                    Confirmar exclusão
+                </button>
+                <a asp-page="/Usuarios/Index" class="tw-flex-1 tw-bg-gray-400 hover:tw-bg-gray-500 !tw-text-white tw-px-4 tw-py-2 tw-rounded-lg tw-font-semibold tw-transition-colors tw-cursor-pointer tw-text-center tw-flex tw-items-center tw-justify-center tw-no-underline">
+                    Cancelar
+                </a>
+            </div>
+        </form>
+    </div>
 
-<a asp-page="/Usuarios/Index">Cancelar</a>
+</div>
