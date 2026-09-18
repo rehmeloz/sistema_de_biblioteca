@@ -1,0 +1,56 @@
+﻿@page
+@model Biblioteca.Pages.Retiradas.IndexModel
+
+<div class="tw-flex tw-justify-between tw-items-center tw-mb-6">
+    <h1 class="tw-text-3xl tw-font-bold tw-text-gray-800">Histórico de Retiradas</h1>
+
+    <div class="tw-flex tw-gap-3">
+        <a class="btn btn-primary" asp-page="/Retiradas/Create">Registrar Retirada</a>
+    </div>
+</div>
+
+<div class="tw-overflow-x-auto tw-bg-white tw-rounded-lg tw-shadow-md">
+    <table class="tw-w-full tw-border-collapse">
+        <thead>
+            <tr class="tw-bg-gradient-to-r tw-from-blue-600 tw-to-blue-700 tw-text-white">
+                <th class="tw-px-6 tw-py-4 tw-text-left tw-font-semibold">Livro</th>
+                <th class="tw-px-6 tw-py-4 tw-text-left tw-font-semibold">Autor</th>
+                <th class="tw-px-6 tw-py-4 tw-text-left tw-font-semibold">Usuário</th>
+                <th class="tw-px-6 tw-py-4 tw-text-left tw-font-semibold">Data Retirada</th>
+                <th class="tw-px-6 tw-py-4 tw-text-center tw-font-semibold">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var retirada in Model.Retiradas)
+            {
+                <tr class="tw-border-b tw-border-gray-200 hover:tw-bg-gray-50 tw-transition-colors">
+                    <td class="tw-px-6 tw-py-4 tw-text-gray-800 tw-font-medium">@retirada.Livro.Titulo</td>
+                    <td class="tw-px-6 tw-py-4 tw-text-gray-700">@retirada.Livro.Autor</td>
+                    <td class="tw-px-6 tw-py-4 tw-text-gray-700">@retirada.Usuario.Nome</td>
+                    <td class="tw-px-6 tw-py-4 tw-text-gray-700">@retirada.DataRetirada.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td class="tw-px-6 tw-py-4 tw-text-center">
+                        @if (retirada.Devolvido)
+                        {
+                            <span class="tw-inline-block tw-bg-green-100 tw-text-green-800 tw-px-3 tw-py-1 tw-rounded-full tw-text-sm tw-font-semibold">
+                                Devolvido
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="tw-inline-block tw-bg-yellow-100 tw-text-yellow-800 tw-px-3 tw-py-1 tw-rounded-full tw-text-sm tw-font-semibold">
+                                Retirado
+                            </span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (Model.Retiradas.Count == 0)
+{
+    <div class="tw-mt-8 tw-text-center tw-p-8 tw-bg-gray-100 tw-rounded-lg">
+        <p class="tw-text-gray-600 tw-text-lg">Nenhuma retirada registrada</p>
+    </div>
+}
