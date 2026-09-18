@@ -9,4 +9,5 @@ public class Livro
     public int UsuarioId { get; set; }
     public Usuario? Usuario { get; set; }
     public string? NomeUsuarioCadastro { get; set; }
+    public ICollection<RetiradaLivro> Retiradas { get; set; } = new List<RetiradaLivro>();
 }
