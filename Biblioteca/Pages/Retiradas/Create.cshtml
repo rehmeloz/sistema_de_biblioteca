@@ -1,0 +1,82 @@
+﻿@page
+@model Biblioteca.Pages.Retiradas.CreateModel
+
+<div class="tw-flex tw-flex-col tw-items-center tw-py-8">
+
+    <h1 class="tw-text-3xl tw-font-bold tw-text-gray-800 tw-mb-8">Registrar Retirada de Livro</h1>
+
+    <div class="tw-bg-white tw-rounded-lg tw-shadow-md tw-p-8 tw-w-full tw-max-w-md">
+
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="tw-bg-red-50 tw-border tw-border-red-200 tw-text-red-700 tw-p-4 tw-rounded-lg tw-mb-6">
+                <h4 class="tw-font-semibold tw-mb-2">Erros encontrados:</h4>
+                <div asp-validation-summary="All"></div>
+            </div>
+        }
+
+        <form method="post">
+            <div class="tw-mb-6">
+                <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2">Autor</label>
+                <select id="autorSelect" class="tw-w-full tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-rounded-lg focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-500">
+                    <option value="">Selecione um autor</option>
+                    @foreach (var autor in Model.Autores)
+                    {
+                        <option value="@autor">@autor</option>
+                    }
+                </select>
+            </div>
+
+            <div class="tw-mb-6">
+                <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2">Livro</label>
+                <select asp-for="SelecionaLivroId" id="livroSelect" class="tw-w-full tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-rounded-lg focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-500">
+                    <option value="">Selecione um livro</option>
+                </select>
+            </div>
+
+            <div class="tw-mb-8">
+                <label class="tw-block tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2">Quem vai retirar</label>
+                <select asp-for="SelecionaUsuarioId" asp-items="Model.UsuariosSelectList" class="tw-w-full tw-px-4 tw-py-2 tw-border tw-border-gray-300 tw-rounded-lg focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-500">
+                    <option value="">Selecione um usuário</option>
+                </select>
+            </div>
+
+            <div class="tw-flex tw-gap-3">
+                <button type="submit" class="tw-flex-1 tw-bg-blue-500 hover:tw-bg-blue-600 !tw-text-white tw-px-4 tw-py-2 tw-rounded-lg tw-font-semibold tw-transition-colors tw-cursor-pointer">
+                    Registrar Retirada
+                </button>
+                <a asp-page="/Retiradas/Index" class="tw-flex-1 tw-bg-gray-400 hover:tw-bg-gray-500 !tw-text-white tw-px-4 tw-py-2 tw-rounded-lg tw-font-semibold tw-transition-colors tw-cursor-pointer tw-text-center tw-flex tw-items-center tw-justify-center tw-no-underline">
+                    Voltar
+                </a>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<script>
+    document.getElementById('autorSelect').addEventListener('change', async function () {
+        const autor = this.value;
+        const livroSelect = document.getElementById('livroSelect');
+
+        if (!autor) {
+            livroSelect.innerHTML = '<option value="">Selecione um livro</option>';
+            return;
+        }
+
+        try {
+            const response = await fetch(`?handler=LivrosPorAutor&autor=${encodeURIComponent(autor)}`);
+            const livros = await response.json();
+
+            livroSelect.innerHTML = '<option value="">Selecione um livro</option>';
+            livros.forEach(livro => {
+                const option = document.createElement('option');
+                option.value = livro.id;
+                option.textContent = livro.titulo;
+                livroSelect.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Erro ao carregar livros:', error);
+        }
+    });
+</script>
