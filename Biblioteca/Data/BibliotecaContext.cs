@@ -8,6 +8,7 @@ public class BibliotecaContext : DbContext
 
     public DbSet<Livro> Livros { get; set; }
     public DbSet<Usuario> Usuarios { get; set; }
+    public DbSet<RetiradaLivro> RetiradaLivros { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
