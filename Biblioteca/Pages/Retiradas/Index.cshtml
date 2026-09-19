@@ -6,6 +6,7 @@
 
     <div class="tw-flex tw-gap-3">
         <a class="btn btn-primary" asp-page="/Retiradas/Create">Registrar Retirada</a>
+        <a class="btn btn-primary" asp-page="/Retiradas/ReturnCreate">Registrar Devolução</a>
     </div>
 </div>
 
@@ -17,6 +18,7 @@
                 <th class="tw-px-6 tw-py-4 tw-text-left tw-font-semibold">Autor</th>
                 <th class="tw-px-6 tw-py-4 tw-text-left tw-font-semibold">Usuário</th>
                 <th class="tw-px-6 tw-py-4 tw-text-left tw-font-semibold">Data Retirada</th>
+                <th class="tw-px-6 tw-py-4 tw-text-left tw-font-semibold">Data Devolução</th>
                 <th class="tw-px-6 tw-py-4 tw-text-center tw-font-semibold">Status</th>
             </tr>
         </thead>
@@ -28,6 +30,16 @@
                     <td class="tw-px-6 tw-py-4 tw-text-gray-700">@retirada.Livro.Autor</td>
                     <td class="tw-px-6 tw-py-4 tw-text-gray-700">@retirada.Usuario.Nome</td>
                     <td class="tw-px-6 tw-py-4 tw-text-gray-700">@retirada.DataRetirada.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td class="tw-px-6 tw-py-4 tw-text-gray-700">
+                        @if (retirada.DataDevolucao.HasValue)
+                        {
+                            @retirada.DataDevolucao?.ToString("dd/MM/yyyy HH:mm")
+                        }
+                        else
+                        {
+                            <span class="tw-text-gray-400">-</span>
+                        }
+                    </td>
                     <td class="tw-px-6 tw-py-4 tw-text-center">
                         @if (retirada.Devolvido)
                         {
@@ -51,6 +63,6 @@
 @if (Model.Retiradas.Count == 0)
 {
     <div class="tw-mt-8 tw-text-center tw-p-8 tw-bg-gray-100 tw-rounded-lg">
-        <p class="tw-text-gray-600 tw-text-lg">Nenhuma retirada registrada</p>
+        <p class="tw-text-gray-600 tw-text-lg">Nenhuma retirada ou devolução registrada</p>
     </div>
 }
