@@ -1,6 +1,6 @@
 # Biblioteca
 
-Sistema de Biblioteca e Usuários com operações **CRUD**, desenvolvido com uma arquitetura moderna utilizando Razor.
+Sistema de Biblioteca com cadastro de Usuários com operações **CRUD**, desenvolvido com uma arquitetura moderna utilizando Razor.
 
 ## Tecnologias Utilizadas
 
@@ -13,26 +13,42 @@ Sistema de Biblioteca e Usuários com operações **CRUD**, desenvolvido com uma
 
 ## Funcionalidades
 
-- **CRUD** funcional de Livros e Usuários (Criar, editar, listar e excluir)
-- **Filtragem** por Livros disponíveis e indisponíveis
+- **CRUD** funcional para realizar cadastro de Livros, Retirada/Devolução de livros e Usuários (Criar, editar, listar e excluir)
+- **Filtragem** por livros disponíveis.
+- **Retirada** de livros cadastrados a partir de filtragem por Autor armazenando o registro em um Histórico de Retiradas.
+- **Devolução** de livros que foram retirados a partir de filtragem por Autor e Usuário, realizando atualizações de status (Retirado/Devolvido) no Histórico de Retiradas.
 
 ## Screenshots
 
-<img width="1919" height="501" alt="image" src="https://github.com/user-attachments/assets/567b49f7-cb82-45bc-87dc-c888c7a32405" />
+<img width="1919" height="517" alt="image" src="https://github.com/user-attachments/assets/f670022d-4001-4e72-9f32-399e36be7b72" />
 
-<img width="1919" height="565" alt="image" src="https://github.com/user-attachments/assets/41cbfba2-68af-41da-9065-0c0ee69a9465" />
+<img width="1916" height="595" alt="image" src="https://github.com/user-attachments/assets/de644549-a3bf-4c5c-aa36-641973d503f9" />
 
-<img width="1916" height="771" alt="image" src="https://github.com/user-attachments/assets/3413279b-88e2-4a63-8945-a567c5391e62" />
+<img width="1918" height="500" alt="image" src="https://github.com/user-attachments/assets/ab8fb316-bd43-47eb-8c6d-ee74adf55872" />
 
-<img width="1918" height="664" alt="image" src="https://github.com/user-attachments/assets/3cbdb5cb-46b2-4fe3-923a-b23211226d25" />
+<img width="1917" height="764" alt="image" src="https://github.com/user-attachments/assets/a7e3e895-d8f1-4199-a9ec-0a44f157a76a" />
 
-<img width="1919" height="326" alt="image" src="https://github.com/user-attachments/assets/0e7de369-a49d-4c87-b2ef-7ff8321de77d" />
+<img width="1919" height="439" alt="image" src="https://github.com/user-attachments/assets/81ed872b-f537-4ae0-8efb-a99d8d3dd6d1" />
 
-<img width="1918" height="543" alt="image" src="https://github.com/user-attachments/assets/3d8f1cd6-0af0-4cbb-9794-006028bc7baa" />
+<img width="1919" height="605" alt="image" src="https://github.com/user-attachments/assets/7a617111-e6c7-4bb3-b837-680636b3e7d7" />
 
-<img width="1919" height="722" alt="image" src="https://github.com/user-attachments/assets/5abce2c8-82cd-4dee-8373-955e912548bd" />
+<img width="1905" height="916" alt="image" src="https://github.com/user-attachments/assets/669085aa-11d5-4234-85b2-b42cdf67d711" />
 
-<img width="1918" height="571" alt="image" src="https://github.com/user-attachments/assets/ebe90f15-43ae-4b8b-9c71-c723e3f50fcd" />
+<img width="1917" height="305" alt="image" src="https://github.com/user-attachments/assets/28f60d1a-ad9b-44b7-811f-270d7681852d" />
+
+<img width="1919" height="509" alt="image" src="https://github.com/user-attachments/assets/ff8216d6-78b6-49d0-a0fa-f2c9ee5c7342" />
+
+<img width="1918" height="523" alt="image" src="https://github.com/user-attachments/assets/cea30b65-c5ce-4abe-a603-ac63f3ad4c76" />
+
+<img width="1919" height="664" alt="image" src="https://github.com/user-attachments/assets/fb07cb56-979b-490d-a386-65f0a56848e6" />
+
+
+
+
+
+
+
+
 
 
 
