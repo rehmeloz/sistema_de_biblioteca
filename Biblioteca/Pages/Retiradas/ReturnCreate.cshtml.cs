@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Biblioteca.Models;
 using Biblioteca.Data;
@@ -18,14 +19,52 @@ namespace Biblioteca.Pages.Retiradas
         [BindProperty]
         public int SelecionaRetiradaId { get; set; }
 
+        [BindProperty(SupportsGet = true)]
+        public string? FiltroAutor { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public int? FiltroUsuarioId { get; set; }
+
         public List<RetiradaLivro> RetiradasAtivas { get; set; }
+        public List<string> Autores { get; set; }
+        public SelectList UsuariosSelectList { get; set; }
 
         public async Task OnGetAsync()
         {
-            RetiradasAtivas = await _context.RetiradaLivros
+            Autores = await _context.RetiradaLivros
+                .Where(r => !r.Devolvido)
+                .Select(r => r.Livro.Autor)
+                .Distinct()
+                .OrderBy(a => a)
+                .ToListAsync();
+
+            UsuariosSelectList = new SelectList(
+                await _context.RetiradaLivros
+                    .Where(r => !r.Devolvido)
+                    .Select(r => r.Usuario)
+                    .Distinct()
+                    .OrderBy(u => u.Nome)
+                    .ToListAsync(),
+                "Id",
+                "Nome"
+            );
+
+            var query = _context.RetiradaLivros
                 .Include(r => r.Livro)
                 .Include(r => r.Usuario)
-                .Where(r => !r.Devolvido)
+                .Where(r => !r.Devolvido);
+
+            if (!string.IsNullOrEmpty(FiltroAutor))
+            {
+                query = query.Where(r => r.Livro.Autor == FiltroAutor);
+            }
+
+            if (FiltroUsuarioId.HasValue && FiltroUsuarioId > 0)
+            {
+                query = query.Where(r => r.UsuarioId == FiltroUsuarioId.Value);
+            }
+
+            RetiradasAtivas = await query
                 .OrderByDescending(r => r.DataRetirada)
                 .ToListAsync();
         }
@@ -39,6 +78,7 @@ namespace Biblioteca.Pages.Retiradas
                 return Page();
             }
 
+            // Verificar se a retirada existe
             var retirada = await _context.RetiradaLivros
                 .Include(r => r.Livro)
                 .FirstOrDefaultAsync(r => r.Id == SelecionaRetiradaId);
