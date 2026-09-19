@@ -1,6 +1,6 @@
 # Biblioteca
 
-Sistema de Biblioteca com cadastro de Usuários com operações **CRUD**, desenvolvido com uma arquitetura moderna utilizando Razor.
+Sistema de Biblioteca com cadastro de Livros e Usuários com operações **CRUD**, desenvolvido com uma arquitetura moderna utilizando Razor.
 
 ## Tecnologias Utilizadas
 
